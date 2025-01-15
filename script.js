@@ -1,4 +1,3 @@
-// Create the Sudoku board with input fields
 function createBoard() {
     const boardElement = document.getElementById('board');
     for (let i = 0; i < 9; i++) {
@@ -12,7 +11,6 @@ function createBoard() {
     }
 }
 
-// Get the Sudoku board as a 2D array
 function getBoard() {
     let board = [];
     for (let i = 0; i < 9; i++) {
@@ -26,7 +24,6 @@ function getBoard() {
     return board;
 }
 
-// Set the solved Sudoku board
 function setBoard(board) {
     for (let i = 0; i < 9; i++) {
         for (let j = 0; j < 9; j++) {
@@ -35,7 +32,6 @@ function setBoard(board) {
     }
 }
 
-// Sudoku solving functions
 function isSafe(board, row, col, num) {
     for (let x = 0; x < 9; x++) {
         if (board[row][x] === num || board[x][col] === num) {
@@ -84,9 +80,7 @@ function solveSudoku(board) {
         }
     }
     return false;
-}
 
-// Event listener for the solve button
 document.getElementById('solveButton').addEventListener('click', () => {
     let board = getBoard();
     if (solveSudoku(board)) {
@@ -96,5 +90,4 @@ document.getElementById('solveButton').addEventListener('click', () => {
     }
 });
 
-// Initialize the Sudoku board
 createBoard();
